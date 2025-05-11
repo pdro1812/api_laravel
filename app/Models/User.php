@@ -23,7 +23,12 @@ class User extends Authenticatable
         'birthday',
     ];
     
-
+  // Define o relacionamento com as transações
+  public function transactions()
+  {
+      return $this->hasMany(Transaction::class); // Relacionamento "um para muitos"
+  }
+  
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ListUsersController extends Controller
 {
-    // Obtendo todos os posts do mais novo para o mais antigo
+    // Obtendo todos os users do mais novo para o mais antigo
     public function index()
     {
 
@@ -16,7 +16,7 @@ class ListUsersController extends Controller
         return response()->json($users);    
     }
 
-    //mostrar apenas um post filtrando pelo id
+    //mostrar apenas um users filtrando pelo id
     public function show($id)
     {
         $user = Users::find($id);
@@ -27,7 +27,7 @@ class ListUsersController extends Controller
         }
     }
 
-    //deletar um post filtrando pelo id
+    //deletar um user filtrando pelo id
     public function destroy($id)
     {
         $user = Users::find($id);
@@ -38,4 +38,6 @@ class ListUsersController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
     }
+
+    
 }
